@@ -6,19 +6,19 @@ import * as path from 'path';
 
 @Injectable()
 export class FileService {
-  public s3Client: S3Client;
-  public bucketName: string;
+  private s3Client: S3Client;
+  private bucketName: string;
 
   constructor() {
     this.s3Client = new S3Client({
       region: 'eu-central-1',
       credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey:process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: "AKIAZKDICZIRDUXEH4XH",
+        secretAccessKey: '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',
       },
     });
 
-    this.bucketName =process.env.AWS_SECRET_ACCESS_KEY;
+    this.bucketName = 'ahmedsamir1';
   }
 
   async uploadFile(file: Express.Multer.File,folderName)  {
